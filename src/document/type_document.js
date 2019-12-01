@@ -14,7 +14,7 @@ const schema = {
   ],
   properties: {
     id: {
-      type: 'minimum',
+      type: 'number',
       minimum: 1,
       description: 'auto increment document id',
     },
