@@ -1,3 +1,5 @@
+const sectionSchema = require('../section/type_section');
+
 const schema = {
   type: 'object',
   title: 'Document Model',
@@ -36,7 +38,10 @@ const schema = {
       description: 'title of document',
     },
     sections: {
-
+      type: 'array',
+      description: 'sections of document',
+      minItems: 1,
+      items: sectionSchema.schema,
     },
     is_private: {
       type: 'boolean',

@@ -1,3 +1,5 @@
+const pageSchema = require('../page/type_page');
+
 const schema = {
   type: 'object',
   title: 'Section Model',
@@ -22,7 +24,10 @@ const schema = {
       description: 'title of section',
     },
     pages: {
-
+      type: 'array',
+      description: 'pages of section',
+      minItems: 1,
+      items: pageSchema.schema,
     },
     created_at: {
       "type": "string",
