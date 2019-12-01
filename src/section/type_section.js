@@ -1,39 +1,28 @@
 const schema = {
   type: 'object',
-  title: 'Document Model',
+  title: 'Section Model',
   required: [
+    'id',
+    'title',
+    'pages',
+    'created_at',
+    'updated_at',
   ],
   properties: {
     id: {
       type: 'minimum',
       minimum: 1,
-      description: 'auto increment document id',
-    },
-    document_id: {
-      type: 'string',
-      minLength: 1,
-      maxLength: 100,
-      format: 'ascii_printable',
-      description: 'generated document id',
-    },
-    version: {
-      type: 'number',
-      minimum: 0,
-      description: 'version of document',
+      description: 'auto increment section id',
     },
     title: {
       type: 'string',
       minLength: 1,
       maxLength: 50,
       format: 'ascii_printable',
-      description: 'title of document',
+      description: 'title of section',
     },
-    sections: {
+    pages: {
 
-    },
-    is_private: {
-      type: 'boolean',
-      description: 'whether this document is private',
     },
     created_at: {
       "type": "string",

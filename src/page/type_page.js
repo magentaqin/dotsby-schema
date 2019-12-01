@@ -1,22 +1,36 @@
 const schema = {
   type: 'object',
-  title: 'Section Model',
+  title: 'Page Model',
   required: [
+
   ],
   properties: {
     id: {
       type: 'minimum',
       minimum: 1,
-      description: 'auto increment section id',
+      description: 'auto increment page id',
     },
     title: {
       type: 'string',
       minLength: 1,
       maxLength: 50,
       format: 'ascii_printable',
-      description: 'title of section',
+      description: 'title of page',
     },
-    pages: {
+    is_root_path: {
+      type: 'boolean',
+      description: 'whether this page is the index page',
+    },
+    content: {
+      type: 'string',
+      minLength: 1,
+      format: 'ascii_printable',
+      description: 'page content',
+    },
+    apiContent: {
+
+    },
+    headers: {
 
     },
     created_at: {
