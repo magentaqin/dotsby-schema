@@ -6,7 +6,7 @@ const page = JSON.parse(JSON.stringify(pagesSchema.schema))
 
 page.required = ['title', 'path'];
 section.required = ['title', 'pages'];
-section.properties.pages.items = pagesSchema.schema;
+section.properties.pages.items = page;
 
 
 const schema = {
