@@ -1,6 +1,6 @@
 const schema = {
   type: 'object',
-  title: 'Login Params',
+  title: 'Signup Params',
   required: [
     'username',
     'password',
