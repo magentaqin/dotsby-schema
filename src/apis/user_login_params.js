@@ -2,16 +2,14 @@ const schema = {
   type: 'object',
   title: 'Login Params',
   required: [
-    'username',
+    'email',
     'password',
   ],
   properties: {
-    username: {
+    email: {
       type: 'string',
-      minLength: 1,
-      maxLength: 20,
-      format: 'ascii_printable',
-      description: 'user name',
+      format: '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',
+      description: 'email',
     },
     password: {
       type: 'string',
