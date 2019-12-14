@@ -3,10 +3,12 @@ const schema = {
   title: 'User Model',
   required: [
     'id',
-    'token',
     'email',
+    'password_hash',
+    'status',
     'created_at',
     'updated_at',
+    'last_login_at',
   ],
   properties: {
     id: {
@@ -19,12 +21,14 @@ const schema = {
       format: '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',
       description: 'email',
     },
-    token: {
+    password_hash: {
       type: 'string',
-      minLength: 1,
-      maxLength: 100,
-      format: 'ascii_printable',
-      description: 'user token',
+      description: 'hash value for password'
+    },
+    status: {
+      type: 'string',
+      enum: ['ACTIVE', 'INACTIVE'],
+      description: 'status of user',
     },
     created_at: {
       "type": "string",
@@ -38,6 +42,12 @@ const schema = {
       "example": "2019-12-01T16:39:57-08:00",
       "description": "time updated at"
     },
+    last_login_at: {
+      "type": "string",
+      "format": "date-time",
+      "example": "2019-12-01T16:39:57-08:00",
+      "description": "last login time"
+    }
   },
 }
 

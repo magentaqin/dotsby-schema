@@ -1,9 +1,9 @@
-const userSchema = require('../user/type_user')
+const loginRespSchema = require('./user_login_response')
 
-const user = JSON.parse(JSON.stringify(userSchema.schema))
+const schema = JSON.parse(JSON.stringify(loginRespSchema.schema))
 
-user.title = 'User Info Response';
+schema.title = 'User Info Response';
 
 module.exports = {
-  schema: user,
+  schema,
 }
