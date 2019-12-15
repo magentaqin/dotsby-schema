@@ -1,3 +1,4 @@
+const { email_regx, password_regx } = require('../../utils/types')
 const schema = {
   type: 'object',
   title: 'Signup Params',
@@ -8,14 +9,15 @@ const schema = {
   properties: {
     email: {
       type: 'string',
-      pattern: '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',
+      pattern: email_regx,
+      format: 'email',
       description: 'email',
     },
     password: {
       type: 'string',
       minLength: 6,
       maxLength: 20,
-      pattern: '/^[a-zA-Z0-9]{6,20}$/',
+      pattern: password_regx,
       description: 'password',
     },
   },

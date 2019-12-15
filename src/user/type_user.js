@@ -1,3 +1,4 @@
+const { email_regx } = require('../../utils/types')
 const schema = {
   type: 'object',
   title: 'User Model',
@@ -18,7 +19,8 @@ const schema = {
     },
     email: {
       type: 'string',
-      pattern: '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',
+      pattern: email_regx,
+      format: 'email',
       description: 'email',
     },
     password_hash: {
