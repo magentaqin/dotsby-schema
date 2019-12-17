@@ -13,7 +13,6 @@ user.properties = {
   token: {
     type: 'string',
     minLength: 1,
-    maxLength: 100,
     format: 'ascii_printable',
     description: 'user token',
   },
