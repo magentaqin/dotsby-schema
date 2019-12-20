@@ -16,6 +16,7 @@ const updated_at_def = {
 
 const email_regx = '^(?:[0-9a-zA-Z]+(?:[0-9a-zA-Z-_.]){0,}){0,}[0-9a-zA-Z]@(?:(?:[0-9a-zA-Z]+(?:[0-9a-zA-Z-]){0,}){0,}[0-9a-zA-Z].){1,}[a-zA-Z]{2,20}$';
 const password_regx = '^[a-zA-Z0-9]{6,20}$'
+const version_regx = '^[0-9]{1,5}\.[0-9]{1,3}\.[0-9]{1,3}$'
 
 module.exports = {
   created_at_key,
@@ -24,4 +25,5 @@ module.exports = {
   updated_at_def,
   email_regx,
   password_regx,
+  version_regx,
 }

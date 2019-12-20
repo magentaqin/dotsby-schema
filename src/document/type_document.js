@@ -1,4 +1,5 @@
-const sectionSchema = require('../section/type_section');
+
+const { version_regx } = require('../../utils/types')
 
 const schema = {
   type: 'object',
@@ -26,8 +27,8 @@ const schema = {
       description: 'generated document id',
     },
     version: {
-      type: 'number',
-      minimum: 0,
+      type: 'string',
+      pattern: version_regx,
       description: 'version of document',
     },
     title: {
