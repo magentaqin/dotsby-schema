@@ -8,9 +8,9 @@ const schema = {
     'document_id',
     'version',
     'title',
-    'sections',
     'created_at',
     'updated_at',
+    'user_id',
   ],
   properties: {
     id: {
@@ -37,12 +37,6 @@ const schema = {
       format: 'ascii_printable',
       description: 'title of document',
     },
-    sections: {
-      type: 'array',
-      description: 'sections of document',
-      minItems: 1,
-      items: sectionSchema.schema,
-    },
     is_private: {
       type: 'boolean',
       description: 'whether this document is private',
@@ -59,6 +53,11 @@ const schema = {
       "example": "2019-12-01T16:39:57-08:00",
       "description": "time updated at"
     },
+    user_id: {
+      type: 'number',
+      minimum: 1,
+      description: 'foreign key. id of users table.',
+    }
   },
 }
 

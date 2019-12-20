@@ -4,8 +4,8 @@ const { omitArrElements } = require('../../utils/arrayHelper');
 
 const document = JSON.parse(JSON.stringify(documentSchema.schema));
 
-document.required = omitArrElements(document.required, ['sections']);
-document.properties = omitKeys(document.properties, ['sections']);
+document.required = omitArrElements(document.required, ['sections', 'user_id']);
+document.properties = omitKeys(document.properties, ['sections', 'user_id']);
 
 const schema = {
   title: 'Get Document List Response',

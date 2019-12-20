@@ -10,6 +10,7 @@ const schema = {
     'path',
     'created_at',
     'updated_at',
+    'section_id',
   ],
   properties: {
     id: {
@@ -66,6 +67,11 @@ const schema = {
       "example": "2019-12-01T16:39:57-08:00",
       "description": "time updated at"
     },
+    section_id: {
+      type: 'number',
+      minimum: 1,
+      description: 'foreign key. id of sections table.',
+    }
   },
 }
 

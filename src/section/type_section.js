@@ -6,9 +6,9 @@ const schema = {
   required: [
     'id',
     'title',
-    'pages',
     'created_at',
     'updated_at',
+    'doc_id',
   ],
   properties: {
     id: {
@@ -23,12 +23,6 @@ const schema = {
       format: 'ascii_printable',
       description: 'title of section',
     },
-    pages: {
-      type: 'array',
-      description: 'pages of section',
-      minItems: 1,
-      items: pageSchema.schema,
-    },
     created_at: {
       "type": "string",
       "format": "date-time",
@@ -41,6 +35,11 @@ const schema = {
       "example": "2019-12-01T16:39:57-08:00",
       "description": "time updated at"
     },
+    doc_id: {
+      type: 'number',
+      minimum: 1,
+      description: 'foreign key. id of docs table.',
+    }
   },
 }
 

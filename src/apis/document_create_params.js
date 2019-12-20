@@ -1,12 +1,21 @@
 const sectionSchema = require('../section/type_section');
 const pagesSchema = require('../page/type_page');
+const { omitKeys } = require('../../utils/objHelper')
 
 const section = JSON.parse(JSON.stringify(sectionSchema.schema));
 const page = JSON.parse(JSON.stringify(pagesSchema.schema))
 
 page.required = ['title', 'path'];
+page.properties = omitKeys(page.properties, ['section_id']);
+
 section.required = ['title', 'pages'];
-section.properties.pages.items = page;
+section.properties = omitKeys(section.properties, ['doc_id'])
+section.properties.pages = {
+  type: 'array',
+  description: 'pages of section',
+  minItems: 1,
+  items: page,
+}
 
 
 const schema = {
