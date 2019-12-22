@@ -43,10 +43,10 @@ const schema = {
       description: 'page content',
     },
     apiContent: apiContentSchema,
-    headers: {
+    subtitles: {
       type: 'array',
       description: 'headers extracted from page',
-      minItems: 1,
+      minItems: 0,
       items: {
         type: 'string',
         minLength: 1,
