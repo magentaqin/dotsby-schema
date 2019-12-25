@@ -8,8 +8,8 @@ const document = JSON.parse(JSON.stringify(documentSchema.schema));
 const section = JSON.parse(JSON.stringify(sectionSchema.schema));
 const page = JSON.parse(JSON.stringify(pagesSchema.schema))
 
-page.required = omitArrElements(page.required, 'section_id');
-page.properties = omitKeys(page.properties, ['section_id']);
+page.required = omitArrElements(page.required, ['section_id', 'created_at', 'updated_at']);
+page.properties = omitKeys(page.properties, ['section_id', 'created_at', 'updated_at']);
 
 section.required = omitArrElements(section.required, ['doc_id'])
 section.properties = omitKeys(section.properties, ['doc_id'])
