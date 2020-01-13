@@ -1,4 +1,5 @@
-const { email_regx } = require('../../utils/types')
+const { email_regx, created_at_def, updated_at_def } = require('../../utils/types')
+
 const schema = {
   type: 'object',
   title: 'User Model',
@@ -32,18 +33,8 @@ const schema = {
       enum: ['ACTIVE', 'INACTIVE'],
       description: 'status of user',
     },
-    created_at: {
-      "type": "string",
-      "format": "date-time",
-      "example": "2019-12-01T16:39:57-08:00",
-      "description": "time created at"
-    },
-    updated_at: {
-      "type": "string",
-      "format": "date-time",
-      "example": "2019-12-01T16:39:57-08:00",
-      "description": "time updated at"
-    },
+    created_at_def,
+    updated_at_def,
     last_login_at: {
       "type": "string",
       "format": "date-time",

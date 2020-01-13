@@ -1,4 +1,5 @@
 const apiContentSchema = require('./type_api_content');
+const { created_at_def, updated_at_def } = require('../../utils/types')
 
 const schema = {
   type: 'object',
@@ -55,18 +56,8 @@ const schema = {
         description: 'extracted header of page',
       }
     },
-    created_at: {
-      "type": "string",
-      "format": "date-time",
-      "example": "2019-12-01T16:39:57-08:00",
-      "description": "time created at"
-    },
-    updated_at: {
-      "type": "string",
-      "format": "date-time",
-      "example": "2019-12-01T16:39:57-08:00",
-      "description": "time updated at"
-    },
+    created_at_def,
+    updated_at_def,
     section_id: {
       type: 'number',
       minimum: 1,

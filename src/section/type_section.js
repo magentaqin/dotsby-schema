@@ -1,4 +1,4 @@
-const pageSchema = require('../page/type_page');
+const { created_at_def, updated_at_def } = require('../../utils/types')
 
 const schema = {
   type: 'object',
@@ -23,18 +23,8 @@ const schema = {
       format: 'ascii_printable',
       description: 'title of section',
     },
-    created_at: {
-      "type": "string",
-      "format": "date-time",
-      "example": "2019-12-01T16:39:57-08:00",
-      "description": "time created at"
-    },
-    updated_at: {
-      "type": "string",
-      "format": "date-time",
-      "example": "2019-12-01T16:39:57-08:00",
-      "description": "time updated at"
-    },
+    created_at_def,
+    updated_at_def,
     doc_id: {
       type: 'number',
       minimum: 1,
