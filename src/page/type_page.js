@@ -7,6 +7,7 @@ const schema = {
   required: [
     'id',
     'title',
+    'page_id',
     'is_root_path',
     'path',
     'created_at',
@@ -18,6 +19,13 @@ const schema = {
       type: 'number',
       minimum: 1,
       description: 'auto increment page id',
+    },
+    page_id: {
+      type: 'string',
+      minLength: 1,
+      maxLength: 255,
+      format: 'ascii_printable',
+      description: 'generated page id',
     },
     title: {
       type: 'string',
