@@ -1,5 +1,5 @@
 
-const { version_regx, created_at_def, updated_at_def } = require('../../utils/types')
+const { version_regx, created_at_def, updated_at_def, created_at_key, updated_at_key } = require('../../utils/types')
 
 const schema = {
   type: 'object',
@@ -42,8 +42,8 @@ const schema = {
       type: 'boolean',
       description: 'whether this document is private',
     },
-    created_at_def,
-    updated_at_def,
+    [created_at_key]: created_at_def,
+    [updated_at_key]: updated_at_def,
     user_id: {
       type: 'number',
       minimum: 1,

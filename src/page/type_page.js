@@ -1,5 +1,5 @@
 const apiContentSchema = require('./type_api_content');
-const { created_at_def, updated_at_def } = require('../../utils/types')
+const { created_at_def, updated_at_def, created_at_key, updated_at_key } = require('../../utils/types')
 
 const schema = {
   type: 'object',
@@ -56,8 +56,8 @@ const schema = {
         description: 'extracted header of page',
       }
     },
-    created_at_def,
-    updated_at_def,
+    [created_at_key]: created_at_def,
+    [updated_at_key]: updated_at_def,
     section_id: {
       type: 'number',
       minimum: 1,
