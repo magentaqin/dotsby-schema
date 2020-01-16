@@ -22,9 +22,9 @@ section.properties.pages = {
 }
 
 document.title = 'Get Document Info';
-document.required = omitArrElements(document.required, ['user_id']);
+document.required = omitArrElements(document.required, ['user_id', 'id']);
 document.required.push('sections');
-document.properties = omitKeys(document.properties, ['user_id'])
+document.properties = omitKeys(document.properties, ['user_id', 'id'])
 document.properties.sections = {
   type: 'array',
   description: 'sections of document',
