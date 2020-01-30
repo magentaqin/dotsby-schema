@@ -8,9 +8,13 @@ const document = JSON.parse(JSON.stringify(documentSchema.schema));
 document.required = omitArrElements(document.required, ['sections', 'user_id', 'id']);
 document.properties = omitKeys(document.properties, ['sections', 'user_id', 'id']);
 
-document.required = [...document.required, 'all_versions'];
+document.required = [...document.required, 'all_versions', 'is_published'];
 document.properties = {
   ...document.properties,
+  is_published: {
+    type: 'boolean',
+    description: 'whether this document has been published',
+  },
   all_versions: {
     type: 'array',
     minItems: 1,
