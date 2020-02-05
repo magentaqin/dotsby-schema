@@ -2,13 +2,23 @@ const schema = {
   type: 'object',
   title: 'Page Info Params',
   required: [
-    'id'
+    'document_id',
+    'page_id',
   ],
   properties: {
-    id: {
-      type: 'number',
-      minimum: 1,
-      description: 'auto increment page id',
+    document_id: {
+      type: 'string',
+      minLength: 1,
+      maxLength: 100,
+      format: 'ascii_printable',
+      description: 'generated document id',
+    },
+    page_id: {
+      type: 'string',
+      minLength: 1,
+      maxLength: 100,
+      format: 'ascii_printable',
+      description: 'generated page id',
     },
   },
 }
