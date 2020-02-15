@@ -10,6 +10,8 @@ const schema = {
       'page_id',
       'page_title',
       'search_string',
+      'anchor',
+      'content',
     ],
     properties: {
       query_type: {
@@ -45,15 +47,16 @@ const schema = {
         format: 'ascii_printable',
         description: 'search keyword',
       },
-      header: {
+      anchor: {
         type: 'string',
-        description: 'header of page part where keywork lies in',
+        description: 'anchor where the window will scroll up to',
       },
-      api_category: {
+      content: {
         type: 'string',
-        enum: ['REQUEST_HEADERS','REQUEST_BODY', 'QUERY_PARAMS', 'RESPONSE_HEADERS', 'RESPONSE_DATA'],
-        description: 'category where api field belongs to',
-      }
+        minLength: 1,
+        maxLength: 100,
+        description: 'matched content'
+      },
     }
   }
 }
