@@ -1,8 +1,11 @@
+const { version_regx } = require('../../utils/types');
+
 const schema = {
   title: 'Query Params',
   type: 'object',
   required: [
     'document_id',
+    'version',
     'query_type',
     'search_string',
   ],
@@ -13,6 +16,11 @@ const schema = {
       maxLength: 100,
       format: 'ascii_printable',
       description: 'generated document id',
+    },
+    version: {
+      type: 'string',
+      pattern: version_regx,
+      description: 'version of document',
     },
     query_type: {
       type: 'string',
