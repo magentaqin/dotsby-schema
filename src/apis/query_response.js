@@ -1,11 +1,9 @@
-const schema = {
-  title: 'Query Response',
+const itemsSchema = {
   type: 'array',
   minItems: 0,
   items: {
     type: 'object',
     required: [
-      'query_type',
       'section_id',
       'page_id',
       'page_title',
@@ -14,11 +12,6 @@ const schema = {
       'content',
     ],
     properties: {
-      query_type: {
-        type: 'string',
-        enum: ['TEXT', 'REQUEST_URI', 'FIELD'],
-        description: 'query type',
-      },
       section_id: {
         type: 'string',
         minLength: 1,
@@ -60,6 +53,20 @@ const schema = {
     }
   }
 }
+
+const schema = {
+  title: 'Query Response',
+  type: 'object',
+  required: ['query_type', 'items'],
+  properties: {
+    query_type: {
+      type: 'string',
+      enum: ['TEXT', 'REQUEST_URI', 'FIELD'],
+      description: 'query type',
+    },
+    items: itemsSchema
+  }
+};
 
 module.exports = {
   schema,
