@@ -52,18 +52,6 @@ const schema = {
       description: 'page content',
     },
     apiContent: apiContentSchema,
-    subtitles: {
-      type: 'array',
-      description: 'headers extracted from page',
-      minItems: 0,
-      items: {
-        type: 'string',
-        minLength: 1,
-        maxLength: 50,
-        format: 'ascii_printable',
-        description: 'extracted header of page',
-      }
-    },
     [created_at_key]: created_at_def,
     [updated_at_key]: updated_at_def,
     section_id: {
