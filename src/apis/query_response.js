@@ -6,6 +6,7 @@ const itemsSchema = {
     required: [
       'section_id',
       'page_id',
+      'section_title',
       'page_title',
       'search_string',
       'anchor',
@@ -25,6 +26,13 @@ const itemsSchema = {
         maxLength: 255,
         format: 'ascii_printable',
         description: 'generated page id',
+      },
+      section_title: {
+        type: 'string',
+        minLength: 1,
+        maxLength: 50,
+        format: 'ascii_printable',
+        description: 'title of section',
       },
       page_title: {
         type: 'string',
