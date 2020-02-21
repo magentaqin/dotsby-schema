@@ -11,12 +11,6 @@ const commonProps = {
     format: 'ascii_printable',
     description: 'directory to read markdown files',
   },
-  root_file: {
-    type: 'string',
-    minLength: 1,
-    format: 'ascii_printable',
-    description: 'filename of the index page',
-  }
 }
 
 const sectionWithApiPage = {
@@ -91,6 +85,10 @@ const sectionsWithCustomizedPage = {
             minLength: 1,
             format: 'ascii_printable',
             description: 'filename to read',
+          },
+          is_root_path: {
+            type: 'boolean',
+            description: 'whether this file serves as index page',
           }
         }
       }
